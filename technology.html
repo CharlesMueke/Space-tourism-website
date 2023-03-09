@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani">
+  <title>Space tourism website</title>
+</head>
+<body style="background-image: url(assets/technology/background-technology-desktop.jpg);">
+  <div class="container">
+    <img src="assets/shared/logo.svg" alt class="one">
+    <nav>   
+      <ul>
+        <input type="checkbox" id="check">
+       <span class="menu">
+        <li class="item"><a href="index.html">01 Home</a></li>
+        <li class="item"><a href="destination-moon.html">02 destination</a></li>
+        <li class="item"><a href="crew.html">03 crew</a></li>
+        <li class="item"><a href="technology.html">04 technology</a></li>
+  
+       
+       <label for="check" class="close-menu"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"/><path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"/></g></svg></label>
+      </span>
+       <label for="check" class="open-menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"/></g></svg></label>
+        </ul>
+  </nav>
+  </div>
+<div class="pick">
+  <span class="p">03 space launch 101</span>
+</div><br>
+<div id="Mslides">
+<div class="slides fade">
+  <div>
+    <span class="dott" onclick="currentSlide(1)" ></span> 
+    <span class="dott" onclick="currentSlide(2)"></span> 
+    <span class="dott" onclick="currentSlide(3)"></span> 
+  </div>
+  <div class="details">
+  <span class="small">The terminology...</span><br><br>
+  <span class="kim">Launch vehicle</span><br><br>
+  <span class="yes"> A launch vehicle or carrier rocket is a rocket-propelled vehicle<br> used to carry a 
+    payload from Earth's surface to space,<br> usually to Earth orbit or beyond. Our 
+    WEB-X carrier rocket <br>is the most powerful in operation. Standing 150 metres tall,<br> 
+    it's quite an awe-inspiring sight on the launch pad</span>
+</div>
+<img src="assets/technology/image-launch-vehicle-portrait.jpg" alt class="crew3">
+</div>
+<div class="slides fade">
+  <div>
+    <span class="dott" onclick="currentSlide(1)"></span> 
+    <span class="dott" onclick="currentSlide(2)"></span> 
+    <span class="dott" onclick="currentSlide(3)"></span> 
+  </div>
+  <div class="details">
+  <span class="small">The terminology...</span><br><br>
+  <span class="kim">Spaceport</span><br><br>
+  <span class="yes"> A spaceport or cosmodrome is a site for launching (or receiving)<br> spacecraft, 
+    by analogy to the seaport for ships or airport for<br> aircraft. Based in the 
+    famous Cape Canaveral, our spaceport is ideally<br> situated to take advantage 
+    of the Earth’s rotation for launch.</span>
+</div>
+<img src="assets/technology/image-spaceport-portrait.jpg" alt class="crew3">
+</div>
+<div class="slides fade">
+  <div>
+    <span class="dott" onclick="currentSlide(1)"></span> 
+    <span class="dott" onclick="currentSlide(2)"></span> 
+    <span class="dott" onclick="currentSlide(3)"></span> 
+  </div>
+  <div class="details">
+  <span class="small">The terminology...</span><br><br>
+  <span class="kim">Space capsule</span><br>
+  <span class="yes"> A space capsule is an often-crewed spacecraft that uses a <br>blunt-body reentry 
+    capsule to reenter the Earth's atmosphere without<br> wings. Our capsule is where 
+    you'll spend your time during the flight.<br> It includes a space gym, cinema, 
+    and plenty of other activities to keep <br>you entertained.</span>
+</div>
+<img src="assets/technology/image-space-capsule-portrait.jpg" alt class="crew3">
+</div>
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slides");
+    let dots = document.getElementsByClassName("dott");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "flex";  
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+</body>
+</html>
